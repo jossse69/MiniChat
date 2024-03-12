@@ -1,0 +1,73 @@
+---
+// Example setup: Import statements or scripts to fetch chat rooms or user lists
+// Placeholder data for chat rooms and direct messages
+const chatRooms = [
+    { id: 1, name: "Astro Developers" },
+    { id: 2, name: "Web Design Enthusiasts" },
+    // Add more rooms
+];
+
+const directMessages = [
+    { id: 1, name: "Jane Doe" },
+    { id: 2, name: "John Smith" },
+    // Add more users
+];
+---
+
+<aside class="sidebar">
+    <div class="chat-rooms">
+        <h2>Chat Rooms</h2>
+        <ul>
+            {chatRooms.map(room => (
+                <li key={room.id}><a href={`/chat/${room.id}`}>{room.name}</a></li>
+            ))}
+        </ul>
+    </div>
+    <div class="direct-messages">
+        <h2>Direct Messages</h2>
+        <ul>
+            {directMessages.map(user => (
+                <li key={user.id}><a href={`/messages/${user.id}`}>{user.name}</a></li>
+            ))}
+        </ul>
+    </div>
+
+    <style>
+        .sidebar {
+        width: 240px;
+        background-color: #f4f4f7;
+        padding: 20px;
+        height: 100vh;
+        overflow-y: auto;
+        border-right: 1px solid #e0e0e0; /* Add a subtle border */
+    }
+
+    .chat-rooms h2, .direct-messages h2 {
+        margin-top: 0;
+        font-size: 1.2em;
+        color: #333;
+        font: 1em slkscr;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+        background-color: #fff;
+        border-radius: 20px; /* Rounded corners for list items */
+        padding: 10px 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for depth */
+        font: 1em slkscr;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+        display: block; /* Make the entire list item clickable */
+    }
+        /* Add more styles as needed */
+    </style>
+</aside>

@@ -1,0 +1,61 @@
+---
+// Header component script block for any necessary imports or setup
+// For example, importing a utility to fetch user data or handle logout
+// import { getUserInfo, logout } from '../services/auth';
+// Placeholder user data - replace with actual data fetching logic
+const user = {
+    name: "John Doe",
+    profilePic: "/path/to/profile-pic.jpg", // Replace with actual dynamic path
+};
+---
+
+<header class="app-header">
+    <div class="logo">
+        <!-- Replace with your app's logo -->
+        <img src="/path/to/your/logo.png" alt="App Logo" />
+    </div>
+    <div class="user-info">
+        <span>{user.name}</span>
+        <img src={user.profilePic} alt="Profile Picture" class="profile-pic" />
+        <!-- You can add a logout button or link here -->
+        <!-- <button onClick={logout}>Logout</button> -->
+    </div>
+
+    <style>
+        
+        /* import slkscr.ttf font from public folder */
+        
+        .app-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          background: linear-gradient(135deg, #6e8efb, #a777e3);
+          color: #fff;
+          font: 1em slkscr;
+      }
+
+      .logo img {
+          height: 50px; /* Adjust based on your logo's size */
+          border-radius: 8px; /* Slightly rounded corners for the logo */
+      }
+
+      .user-info {
+          display: flex;
+          align-items: center;
+      }
+
+      .user-info span {
+          margin-right: 10px;
+          font-weight: 500;
+      }
+
+      .profile-pic {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%; /* Fully rounded profile picture */
+      }
+
+        /* Add more styles as needed */
+    </style>
+</header>

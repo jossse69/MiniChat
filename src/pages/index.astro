@@ -1,0 +1,42 @@
+---
+// Import necessary components and scripts here
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import ChatArea from '../components/ChatArea.astro';
+// You can add state management and fetch user/servers data here
+// Setup any necessary Astro.fetchContent() calls or import scripts
+---
+
+<html>
+<head>
+    <title>MiniChat</title>
+    <!-- Add your stylesheets and meta tags here -->
+</head>
+<body>
+    <Header />
+    <div class="container">
+        <Sidebar />
+        <ChatArea />
+    </div>
+
+    <style>
+				@font-face {
+					font-family: 'slkscr';
+					src: url('/slkscr.ttf') format('truetype');
+					font-weight: normal;
+					font-style: normal;
+					font-display: swap; /* Enhances text visibility while the font is loading */
+			}
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+				body {
+						font-family: 'slkscr', sans-serif; /* Fallback to sans-serif if 'slkscr' is not available */
+				}
+
+        /* Add more styling as needed */
+    </style>
+</body>
+</html>

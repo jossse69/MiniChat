@@ -1,0 +1,88 @@
+---
+// Sample setup: Import statements or scripts to fetch and send messages
+// Placeholder data for messages in a chat room
+const messages = [
+    { id: 1, user: "Jane Doe", text: "Hello everyone!", timestamp: "10:00 AM" },
+    { id: 2, user: "John Smith", text: "Hi Jane!", timestamp: "10:02 AM" },
+    // Add more messages
+];
+// Function to handle sending messages (stub)
+function sendMessage(event) {
+    event.preventDefault();
+    // Logic to send message
+    console.log("Message sent");
+}
+---
+
+<section class="chat-area">
+    <div class="messages">
+        {messages.map(message => (
+            <div key={message.id} class="message">
+                <strong>{message.user}</strong> <span>{message.timestamp}</span>
+                <p>{message.text}</p>
+            </div>
+        ))}
+    </div>
+    <form class="message-form" onSubmit={sendMessage}>
+        <input type="text" name="message" placeholder="Type a message..." />
+        <button type="submit">Send</button>
+    </form>
+
+    <style>
+        .chat-area {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: #fafafa; /* Light background for the chat area */
+    }
+
+    .messages {
+        overflow-y: auto;
+        flex-grow: 1;
+    }
+
+    .message {
+        margin-bottom: 20px;
+        background-color: #fff;
+        border-radius: 15px; /* Rounded corners for messages */
+        padding: 10px 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Soft shadow for depth */
+    }
+
+    .message strong {
+        color: #6e8efb; /* Use a color that matches the header gradient */
+        font: 1em slkscr;
+    }
+
+    .message span {
+      font: 1em slkscr;
+    }
+
+    .message-form {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .message-form input, .message-form button {
+        border: none;
+        padding: 10px 15px;
+        margin-right: 10px;
+        border-radius: 20px; /* Rounded corners for input and button */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Consistent soft shadow */
+    }
+
+    .message-form input {
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+
+    .message-form button {
+        background-color: #a777e3; /* Matching the header gradient */
+        color: #fff;
+        cursor: pointer;
+        font: 1em slkscr;
+    }
+        /* Add more styles as needed */
+    </style>
+</section>
